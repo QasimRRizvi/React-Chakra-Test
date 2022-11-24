@@ -4,12 +4,11 @@ import { useAppContext } from "../Context/useAppContext";
 
 export const Home = () => {
   const { cards } = useAppContext();
-  console.log({ cards });
 
   return (
     <HStack spacing={8}>
       {cards?.length ? (
-        cards.map((card) => <NFTCard data={card} />)
+        cards.map((card) => <NFTCard key={card.id} data={card} />)
       ) : (
         <Spinner
           thickness="4px"

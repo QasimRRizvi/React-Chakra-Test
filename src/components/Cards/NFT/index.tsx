@@ -30,7 +30,7 @@ export const NFTCard: React.FC<props> = ({ data }) => {
       <CardHeader justifyContent={"space-between"} pb="0">
         <Flex flex="1" justifyContent={"space-between"}>
           {data.tags.map((tag) => (
-            <Button variant="outline">
+            <Button key={`${tag}-key`} variant="outline">
               <Box as="span">{tag}</Box>
             </Button>
           ))}
