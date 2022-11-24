@@ -22,7 +22,7 @@ interface props {
   data: INftDetails;
 }
 
-export const NFTModal: React.FC<props> = ({ data }) => {
+export const NFTCard: React.FC<props> = ({ data }) => {
   const isAuction = React.useMemo(() => data.type === "AUCTION", [data.type]);
 
   return (
@@ -62,7 +62,7 @@ export const NFTModal: React.FC<props> = ({ data }) => {
               <Heading size="md">{`${
                 isAuction ? "AUCTION" : "FLASH DEAL"
               } ENDS IN`}</Heading>
-              <CountDown startDate={data.endTime} />
+              <CountDown startDate={new Date(data.endTime)} />
             </VStack>
           </Flex>
         </Stack>
