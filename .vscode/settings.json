@@ -1,5 +1,33 @@
 {
-  "cSpell.words": [
-    "chakra"
-  ]
+  "editor.tabSize": 2,
+  "editor.wordWrap": "wordWrapColumn",
+  "files.trimTrailingWhitespace": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.exclude": {
+    "node_modules": true
+  },
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "prettier.jsxSingleQuote": true,
+  "prettier.quoteProps": "consistent",
+  "prettier.singleQuote": true,
+  "prettier.bracketSameLine": true,
+  "editor.formatOnSave": true,
+  "git.autofetch": true,
+  "git.mergeEditor": false,
+  "cSpell.words": ["chakra"]
 }
