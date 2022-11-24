@@ -29,5 +29,5 @@
   "editor.formatOnSave": true,
   "git.autofetch": true,
   "git.mergeEditor": false,
-  "cSpell.words": ["chakra", "INFT"]
+  "cSpell.words": ["camelcase", "chakra", "INFT", "paren", "Parens"]
 }
