@@ -3,10 +3,8 @@ import { FaHeart } from 'react-icons/fa';
 
 import {
   Box,
-  Button,
   Card,
   CardBody,
-  CardFooter,
   CardHeader,
   Flex,
   HStack,
@@ -22,6 +20,8 @@ import {
 import { INFTCard } from '../../@type/NFTCard';
 import { percentage } from '../../Utils/common';
 import { CountDown } from '../CountDown';
+
+import { NFTCardFooter } from './NFTCardFooter';
 
 export const NFTCard: React.FC<INFTCard> = ({ data }) => {
   const isAuction = React.useMemo(() => data.type === 'AUCTION', [data.type]);
@@ -141,35 +141,7 @@ export const NFTCard: React.FC<INFTCard> = ({ data }) => {
           </Flex>
         </Stack>
       </CardBody>
-      <CardFooter>
-        {isAuction ? (
-          <Button
-            variant='solid'
-            colorScheme='blue'
-            borderRadius='3'
-            flex={1}
-            size='lg'
-          >
-            BID NOW
-          </Button>
-        ) : (
-          <Flex justify='space-between' flex='1' flexWrap='wrap'>
-            <Button variant='outline' borderRadius='3' size='lg' m='1'>
-              Add to cart
-            </Button>
-            <Button
-              variant='solid'
-              colorScheme='blue'
-              borderRadius='3'
-              size='lg'
-              m='1'
-              minW={[120, 150]}
-            >
-              Buy now
-            </Button>
-          </Flex>
-        )}
-      </CardFooter>
+      <NFTCardFooter isAuction={isAuction} />
     </Card>
   );
 };
