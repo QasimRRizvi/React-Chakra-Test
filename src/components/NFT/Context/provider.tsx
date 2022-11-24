@@ -1,10 +1,10 @@
 import React from 'react';
 import { NFTContext } from '.';
-import { INFTDetails } from '../../Card/interface';
-import { IAppProvider } from './interface';
+import { INFTDetails } from '../../../@type/NFTDetails';
+import { IAppProvider } from '../../../@type/NFTProvider';
 import ContextMiddleware from './middleware';
 
-export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
+export const NFTProvider: React.FC<IAppProvider> = ({ children }) => {
   const [NFTData, setNFTData] = React.useState<INFTDetails[] | null>(null);
 
   React.useEffect(() => {

@@ -1,10 +1,10 @@
 import { NFTContainer } from '../Components/NFT';
-import { AppProvider } from '../Components/NFT/Context/provider';
+import { NFTProvider } from '../Components/NFT/Context/provider';
 
 export const Home = () => {
   return (
-    <AppProvider>
+    <NFTProvider>
       <NFTContainer />
-    </AppProvider>
+    </NFTProvider>
   );
 };

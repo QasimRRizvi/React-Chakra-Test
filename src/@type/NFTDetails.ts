@@ -20,7 +20,3 @@ export interface INFTDetails {
   endTime: Date;
   type: keyof NFT_TYPE;
 }
-
-export interface INFTCard {
-  data: INFTDetails;
-}

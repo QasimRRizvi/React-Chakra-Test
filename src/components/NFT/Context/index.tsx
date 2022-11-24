@@ -1,5 +1,5 @@
 import React from 'react';
-import { INFTDetails } from '../../Card/interface';
+import { INFTDetails } from '../../../@type/NFTDetails';
 
 export const NFTContext = React.createContext<{
   fetchNFTData: () => Promise<void>;

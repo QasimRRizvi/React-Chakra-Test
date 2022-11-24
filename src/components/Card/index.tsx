@@ -6,7 +6,6 @@ import {
   CardFooter,
   CardHeader,
   Flex,
-  Heading,
   HStack,
   Image,
   Stack,
@@ -18,9 +17,9 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 import { FaHeart } from 'react-icons/fa';
+import { INFTCard } from '../../@type/NFTCard';
 import { percentage } from '../../Utils/common';
 import { CountDown } from '../CountDown';
-import { INFTCard } from './interface';
 
 export const NFTCard: React.FC<INFTCard> = ({ data }) => {
   const isAuction = React.useMemo(() => data.type === 'AUCTION', [data.type]);
@@ -29,7 +28,7 @@ export const NFTCard: React.FC<INFTCard> = ({ data }) => {
     <Card
       maxW='sm'
       m='2'
-      bg={useColorModeValue(theme.colors.gray[200], theme.colors.gray[700])}>
+      bg={useColorModeValue('#f7f7f7', theme.colors.gray[700])}>
       <CardHeader justifyContent={'space-between'} pb='0'>
         <Flex flex='1' justifyContent={'space-between'}>
           {data.tags.map((tag) => (
@@ -38,7 +37,9 @@ export const NFTCard: React.FC<INFTCard> = ({ data }) => {
               key={`${tag}-key`}
               borderRadius='full'
               variant='outline'>
-              <TagLabel>{tag}</TagLabel>
+              <TagLabel minW='70' textAlign='center'>
+                {tag}
+              </TagLabel>
             </Tag>
           ))}
         </Flex>
@@ -79,14 +80,17 @@ export const NFTCard: React.FC<INFTCard> = ({ data }) => {
               flex='0.4'
               mr='3'>
               {isAuction ? (
-                <Heading color='green.300' size='sm'>
+                <Text
+                  color='green.300'
+                  fontWeight='bold'
+                  fontSize={['xs', 'sm', 'md']}>
                   HIGHEST BID
-                </Heading>
+                </Text>
               ) : (
                 <Box pos='relative'>
                   <Text
                     fontWeight='bold'
-                    fontSize='large'
+                    fontSize={['md', 'l']}
                     decoration='line-through'
                     sx={{
                       lineHeight: 1.2,
@@ -104,7 +108,7 @@ export const NFTCard: React.FC<INFTCard> = ({ data }) => {
                   </Tag>
                 </Box>
               )}
-              <Text fontWeight='bold'>{`$${
+              <Text fontWeight='bold' fontSize={['large', '2xl']}>{`$${
                 isAuction
                   ? data.amount
                   : data.amount - percentage(data.amount, data.discount)
@@ -116,23 +120,19 @@ export const NFTCard: React.FC<INFTCard> = ({ data }) => {
               borderColor='orange.700'
               px='2'
               py='3'
-              flex='0.6'>
-              <Heading color='blue.200' size='sm'>{`${
+              flex={'0.6'}>
+              <Text
+                color='blue.200'
+                fontWeight='bold'
+                fontSize={['xs', 'sm', 'md']}>{`${
                 isAuction ? 'AUCTION' : 'FLASH DEAL'
-              } ENDS IN`}</Heading>
+              } ENDS IN`}</Text>
               <CountDown startDate={new Date(data.endTime)} />
             </Box>
           </Flex>
         </Stack>
       </CardBody>
-      <CardFooter
-        justify='space-between'
-        flexWrap='wrap'
-        sx={{
-          '& > button': {
-            minW: '120px',
-          },
-        }}>
+      <CardFooter>
         {isAuction ? (
           <Button
             variant='solid'
@@ -143,7 +143,7 @@ export const NFTCard: React.FC<INFTCard> = ({ data }) => {
             BID NOW
           </Button>
         ) : (
-          <>
+          <Flex justify='space-between' flex='1' flexWrap='wrap'>
             <Button variant='outline' borderRadius='3' size='lg' m='1'>
               Add to cart
             </Button>
@@ -152,10 +152,11 @@ export const NFTCard: React.FC<INFTCard> = ({ data }) => {
               colorScheme='blue'
               borderRadius='3'
               size='lg'
-              m='1'>
+              m='1'
+              minW={[120, 150]}>
               Buy now
             </Button>
-          </>
+          </Flex>
         )}
       </CardFooter>
     </Card>

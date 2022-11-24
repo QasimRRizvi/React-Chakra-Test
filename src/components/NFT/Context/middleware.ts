@@ -1,4 +1,4 @@
-import { INFTDetails } from '../../Card/interface';
+import { INFTDetails } from '../../../@type/NFTDetails';
 
 export default class ContextMiddleware {
   static fetchNFTData() {

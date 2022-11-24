@@ -6,7 +6,7 @@ export const NFTContainer = () => {
   const { NFTData } = useNFTContext();
 
   return (
-    <Flex flex='1' justifyContent={'center'} flexWrap='wrap'>
+    <Flex flex='1' flexWrap='wrap'>
       {NFTData?.length ? (
         NFTData.map((NFT) => <NFTCard key={NFT.id} data={NFT} />)
       ) : (
