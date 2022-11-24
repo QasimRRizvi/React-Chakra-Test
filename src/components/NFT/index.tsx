@@ -12,13 +12,15 @@ export const NFTContainer = () => {
       {NFTData?.length ? (
         NFTData.map((NFT) => <NFTCard key={NFT.id} data={NFT} />)
       ) : (
-        <Spinner
-          thickness='4px'
-          speed='0.65s'
-          emptyColor='gray.200'
-          color='blue.500'
-          size='xl'
-        />
+        <Flex flex='1' justify='center'>
+          <Spinner
+            thickness='4px'
+            speed='0.65s'
+            emptyColor='gray.200'
+            color='blue.500'
+            size='xl'
+          />
+        </Flex>
       )}
     </Flex>
   );
