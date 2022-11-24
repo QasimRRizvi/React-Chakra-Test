@@ -1,4 +1,3 @@
-import { HStack } from "@chakra-ui/react";
 import Countdown, { CountdownRendererFn } from "react-countdown";
 
 interface props {
@@ -17,7 +16,6 @@ export const CountDown: React.FC<props> = ({ startDate }) => {
       </span>
     );
   };
-  console.log({ a: new Date(startDate) });
   return (
     <Countdown zeroPadDays={3} date={new Date(startDate)} renderer={renderer} />
   );
