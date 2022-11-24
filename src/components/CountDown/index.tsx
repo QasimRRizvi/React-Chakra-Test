@@ -1,5 +1,7 @@
-import { Text } from '@chakra-ui/react';
 import Countdown, { CountdownRendererFn } from 'react-countdown';
+
+import { Text } from '@chakra-ui/react';
+
 import { ICountDown } from '../../@type/CountDown';
 import { addStartPad } from '../../Utils/common';
 
@@ -8,7 +10,7 @@ export const CountDown: React.FC<ICountDown> = ({ startDate }) => {
     <Text fontWeight='bold' fontSize={['md', 'lg']}>
       {`
       ${addStartPad(days)} : ${addStartPad(hours)} : ${addStartPad(
-        minutes
+        minutes,
       )} : ${addStartPad(seconds)}s`}
     </Text>
   );

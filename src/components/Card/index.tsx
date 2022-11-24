@@ -1,3 +1,6 @@
+import React from 'react';
+import { FaHeart } from 'react-icons/fa';
+
 import {
   Box,
   Button,
@@ -15,8 +18,7 @@ import {
   theme,
   useColorModeValue,
 } from '@chakra-ui/react';
-import React from 'react';
-import { FaHeart } from 'react-icons/fa';
+
 import { INFTCard } from '../../@type/NFTCard';
 import { percentage } from '../../Utils/common';
 import { CountDown } from '../CountDown';
@@ -28,7 +30,8 @@ export const NFTCard: React.FC<INFTCard> = ({ data }) => {
     <Card
       maxW='sm'
       m='2'
-      bg={useColorModeValue('#f7f7f7', theme.colors.gray[700])}>
+      bg={useColorModeValue(theme.colors.gray[100], theme.colors.gray[700])}
+    >
       <CardHeader justifyContent={'space-between'} pb='0'>
         <Flex flex='1' justifyContent={'space-between'}>
           {data.tags.map((tag) => (
@@ -36,7 +39,8 @@ export const NFTCard: React.FC<INFTCard> = ({ data }) => {
               size='md'
               key={`${tag}-key`}
               borderRadius='full'
-              variant='outline'>
+              variant='outline'
+            >
               <TagLabel minW='70' textAlign='center'>
                 {tag}
               </TagLabel>
@@ -59,7 +63,8 @@ export const NFTCard: React.FC<INFTCard> = ({ data }) => {
           <Flex
             flex='1'
             justifyContent={'space-between'}
-            alignItems='flex-start'>
+            alignItems='flex-start'
+          >
             <Box pb='4'>
               <Text fontWeight='medium'>{`#${data.id}`}</Text>
               <Text fontSize='md' fontWeight='bold' color='blue.400'>
@@ -78,12 +83,14 @@ export const NFTCard: React.FC<INFTCard> = ({ data }) => {
               borderColor='blue.700'
               p='3'
               flex='0.4'
-              mr='3'>
+              mr='3'
+            >
               {isAuction ? (
                 <Text
                   color='green.300'
                   fontWeight='bold'
-                  fontSize={['xs', 'sm', 'md']}>
+                  fontSize={['xs', 'sm', 'md']}
+                >
                   HIGHEST BID
                 </Text>
               ) : (
@@ -95,7 +102,8 @@ export const NFTCard: React.FC<INFTCard> = ({ data }) => {
                     sx={{
                       lineHeight: 1.2,
                     }}
-                    color='red.500'>{`$${data.amount}`}</Text>
+                    color='red.500'
+                  >{`$${data.amount}`}</Text>
                   <Tag
                     pos='absolute'
                     top='-5'
@@ -103,7 +111,8 @@ export const NFTCard: React.FC<INFTCard> = ({ data }) => {
                     size='md'
                     borderRadius='full'
                     variant='solid'
-                    colorScheme='green'>
+                    colorScheme='green'
+                  >
                     <TagLabel fontWeight='bold'>{`${data.discount}% OFF`}</TagLabel>
                   </Tag>
                 </Box>
@@ -120,13 +129,13 @@ export const NFTCard: React.FC<INFTCard> = ({ data }) => {
               borderColor='orange.700'
               px='2'
               py='3'
-              flex={'0.6'}>
+              flex={'0.6'}
+            >
               <Text
                 color='blue.200'
                 fontWeight='bold'
-                fontSize={['xs', 'sm', 'md']}>{`${
-                isAuction ? 'AUCTION' : 'FLASH DEAL'
-              } ENDS IN`}</Text>
+                fontSize={['xs', 'sm', 'md']}
+              >{`${isAuction ? 'AUCTION' : 'FLASH DEAL'} ENDS IN`}</Text>
               <CountDown startDate={new Date(data.endTime)} />
             </Box>
           </Flex>
@@ -139,7 +148,8 @@ export const NFTCard: React.FC<INFTCard> = ({ data }) => {
             colorScheme='blue'
             borderRadius='3'
             flex={1}
-            size='lg'>
+            size='lg'
+          >
             BID NOW
           </Button>
         ) : (
@@ -153,7 +163,8 @@ export const NFTCard: React.FC<INFTCard> = ({ data }) => {
               borderRadius='3'
               size='lg'
               m='1'
-              minW={[120, 150]}>
+              minW={[120, 150]}
+            >
               Buy now
             </Button>
           </Flex>

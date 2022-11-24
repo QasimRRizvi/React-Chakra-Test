@@ -1,6 +1,8 @@
 import { Flex, Spinner } from '@chakra-ui/react';
-import { useNFTContext } from './Context/useNFTContext';
+
 import { NFTCard } from '../Card';
+
+import { useNFTContext } from './Context/useNFTContext';
 
 export const NFTContainer = () => {
   const { NFTData } = useNFTContext();
