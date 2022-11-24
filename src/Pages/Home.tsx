@@ -1,23 +1,10 @@
-import { Flex, Spinner } from '@chakra-ui/react';
-import { NFTCard } from '../Components/Cards/NFT';
-import { useAppContext } from '../Context/useAppContext';
+import { NFTContainer } from '../Components/NFT';
+import { AppProvider } from '../Components/NFT/Context/provider';
 
 export const Home = () => {
-  const { cards } = useAppContext();
-
   return (
-    <Flex flex='1' justifyContent={'center'} flexWrap='wrap'>
-      {cards?.length ? (
-        cards.map((card) => <NFTCard key={card.id} data={card} />)
-      ) : (
-        <Spinner
-          thickness='4px'
-          speed='0.65s'
-          emptyColor='gray.200'
-          color='blue.500'
-          size='xl'
-        />
-      )}
-    </Flex>
+    <AppProvider>
+      <NFTContainer />
+    </AppProvider>
   );
 };

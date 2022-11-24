@@ -8,7 +8,7 @@ interface IImage {
   alt: string;
 }
 
-export interface INftDetails {
+export interface INFTDetails {
   tags: string[];
   image: IImage;
   id: string;
@@ -19,4 +19,8 @@ export interface INftDetails {
   discount: number;
   endTime: Date;
   type: keyof NFT_TYPE;
+}
+
+export interface INFTCard {
+  data: INFTDetails;
 }

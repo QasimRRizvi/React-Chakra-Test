@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { AppContext } from '.';
+import { NFTContext } from '.';
 
-export const useAppContext = () => {
-  const app = React.useContext(AppContext);
+export const useNFTContext = () => {
+  const app = React.useContext(NFTContext);
   if (!app) {
     throw new Error(
       `You must call useRealmApp() inside of a <RealmAppProvider />`

@@ -18,15 +18,11 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 import { FaHeart } from 'react-icons/fa';
-import { percentage } from '../../../Utils/common';
-import { CountDown } from '../../CountDown';
-import { INftDetails } from './interface';
+import { percentage } from '../../Utils/common';
+import { CountDown } from '../CountDown';
+import { INFTCard } from './interface';
 
-interface props {
-  data: INftDetails;
-}
-
-export const NFTCard: React.FC<props> = ({ data }) => {
+export const NFTCard: React.FC<INFTCard> = ({ data }) => {
   const isAuction = React.useMemo(() => data.type === 'AUCTION', [data.type]);
 
   return (
