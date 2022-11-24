@@ -1,4 +1,4 @@
-import Countdown, { CountdownRendererFn } from "react-countdown";
+import Countdown, { CountdownRendererFn } from 'react-countdown';
 
 interface props {
   startDate: Date;
@@ -6,7 +6,7 @@ interface props {
 
 export const CountDown: React.FC<props> = ({ startDate }) => {
   const addStartPad = (num: number) => {
-    return num.toString().padStart(2, "0");
+    return num.toString().padStart(2, '0');
   };
   const renderer: CountdownRendererFn = ({ days, hours, minutes, seconds }) => {
     return (

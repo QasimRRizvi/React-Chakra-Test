@@ -1,7 +1,7 @@
-import React from "react";
-import { AppContext } from ".";
-import { INftDetails } from "../Components/Cards/NFT/interface";
-import ContextMiddleware from "./middleware";
+import React from 'react';
+import { AppContext } from '.';
+import { INftDetails } from '../Components/Cards/NFT/interface';
+import ContextMiddleware from './middleware';
 
 interface props {
   children: JSX.Element;

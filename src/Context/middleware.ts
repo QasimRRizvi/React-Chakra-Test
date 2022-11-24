@@ -1,12 +1,12 @@
-import { INftDetails } from "../Components/Cards/NFT/interface";
+import { INftDetails } from '../Components/Cards/NFT/interface';
 
 export default class ContextMiddleware {
   static fetchCards() {
     return new Promise<INftDetails[]>((resolve, reject) => {
-      fetch("data.json", {
+      fetch('data.json', {
         headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
       })
         .then((res) => res.json())

@@ -1,5 +1,5 @@
-import React from "react";
-import { INftDetails } from "../Components/Cards/NFT/interface";
+import React from 'react';
+import { INftDetails } from '../Components/Cards/NFT/interface';
 
 export const AppContext = React.createContext<{
   fetchCards: () => Promise<void>;
@@ -7,7 +7,7 @@ export const AppContext = React.createContext<{
 }>({
   fetchCards: () => {
     return new Promise(() => {
-      console.error("Provider Not Found");
+      console.error('Provider Not Found');
     });
   },
   cards: null,

@@ -4,8 +4,8 @@ interface IImage {
 }
 
 type NFT_TYPE = {
-  SALE: "sale";
-  AUCTION: "auction";
+  SALE: 'sale';
+  AUCTION: 'auction';
 };
 
 export interface INftDetails {
