@@ -27,6 +27,20 @@
       "discount": 15,
       "endTime": "2022/12/24 00:04:18",
       "type": "SALE"
+    },
+    {
+      "tags": ["Hot Deal", "AUCTION"],
+      "image": {
+        "src": "https://i.pinimg.com/736x/d8/a7/06/d8a706b3ecef2b46ce339cd1957b1d59.jpg",
+        "alt": "Rude Monkey"
+      },
+      "id": "C2/457844",
+      "name": "Rude Monkey",
+      "likes": 420,
+      "amount": 5000,
+      "discount": 0,
+      "endTime": "2023/01/01 01:23:22",
+      "type": "AUCTION"
     }
   ]
 }
