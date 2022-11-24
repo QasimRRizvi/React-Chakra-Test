@@ -1,12 +1,12 @@
-interface IImage {
-  src: string;
-  alt: string;
-}
-
 type NFT_TYPE = {
   SALE: 'sale';
   AUCTION: 'auction';
 };
+
+interface IImage {
+  src: string;
+  alt: string;
+}
 
 export interface INftDetails {
   tags: string[];
@@ -14,6 +14,7 @@ export interface INftDetails {
   id: string;
   name: string;
   likes: number;
+  liked: boolean;
   amount: number;
   discount: number;
   endTime: Date;
